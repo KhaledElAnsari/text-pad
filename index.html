@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <link rel="stylesheet" href="./css/font-awesome.min.css" />
+    <title>Backgroundor</title>
+    <style type="text/css">
+      body{
+        text-align: center;
+        margin: 0;
+        background: #f0f0f0;
+        color: #7f8c90;
+      }
+      header {
+        border-bottom: 1px solid rgb(170, 170, 170);
+        padding: 65px 0 0;
+        text-align:center;
+        height: 155px;
+        width: 100%;
+        color: #094B7C;
+        background: #5C9CDA;
+      }
+      header h2 {
+        margin: 0 0 10px;
+        font-size: 36px;
+      }
+      header > p {
+        margin: 15px 0 0;
+        font-size: 22px;
+      }
+      p.intro {
+        font-size: 20px;
+        text-align: center;
+        margin: 60px auto 40px;
+        max-width: 700px;
+        text-align: left;
+      }
+      p.intro a {
+        color: coral;
+        text-decoration: none;
+      }
+      p.intro a:hover {
+        text-decoration: underline;;
+      }
+      #test1, #test2, #test3, #test4 {
+        max-width: 500px;
+        margin: 20px auto;
+        font-size: 24px;
+        border: 1px solid #DBDBDB;
+        border-radius: 3px;
+      }
+      body > p {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      footer {
+        padding: 30px 0;
+        width: 100%;
+        /*border-top: 1px solid rgba(99, 103, 110, 0.91);*/
+        background: #DFDFDF;
+        text-align: center;
+        color: #9D9D9D;
+      }
+      footer .contacticons {
+        list-style: none;
+        width: 100%;
+        display: inline-block;
+        margin: 0 0 15px;
+        padding: 0;
+      }
+      footer .contacticons li {
+        display: inline-block;
+        margin: 0 12px;
+        font-size: 22px;
+      }
+      footer .contacticons li a {
+        color: inherit;
+      }
+      footer .contacticons li a:hover, footer .contacticons li a:focus {
+        color: coral;
+      }
+      footer p {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>Text-Pad</h2>
+      <p>A tiny solution to add some white spaces to your text</p>
+    </header>
+
+    <p class="intro">
+      Ever wanted to add some white space to your string with Javascript? if yes you're at the right place (I guess).
+      </br></br>
+      This project is so tiny (and useless for some people including me) but after reading about <a href="http://www.theregister.co.uk/2016/03/23/npm_left_pad_chaos/">left-pad problem with npm</a>
+      I was like "WOW! even useless stuff can get some attention, let me try something like it but a lil bit better" and here I am releasing this project.
+    </p>
+
+    <p class="intro">
+      Text-Pad is enable to do 4 types of string padding. to see how to use Text-Pad go to the <a href="https://github.com/KhaledElAnsari/text-pad">project github page</a>, to see it in action scroll down to see the examples
+    </p>
+
+    <p>Left padding</p>
+    <div id="test1" style="text-align:left;"></div>
+    <p>Right padding</p>
+    <div id="test2" style="text-align:right;"></div>
+    <p>Up padding</p>
+    <div id="test3" style="text-align:left;"></div>
+    <p>Down padding</p>
+    <div id="test4" style="text-align:left;"></div>
+
+    <p class="intro" style="text-align:center;">
+      That's it! thank you for your time mate.
+    </p>
+
+    <footer>
+      <ul class="contacticons">
+  			<li><a href="https://twitter.com/KhaledElAnsari" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+  			<li><a href="https://jo.linkedin.com/in/khaled-al-ansari-3b1885a6" target="_blank" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+  			<li><a href="https://github.com/KhaledElAnsari" target="_blank" title="Github"><i class="fa fa-github"></i></a></li>
+        <li><a href="http://stackoverflow.com/users/4341572/khaled-al-ansari" target="_blank" title="Stackoverflow"><i class="fa fa-stack-overflow"></i></a></li>
+  			<li><a href="mailto:khaledelansari@gmail.com" title="Email"><i class="fa fa-envelope"></i></a></li>
+  		</ul>
+  		<p>Copyright &copy; All Rights Reserved &middot; Khaled Al-Ansari &middot;</p>
+    </footer>
+
+    <script type="text/javascript" src="text-pad.js"></script>
+    <script type="text/javascript">
+      var ltrtext = textpad.leftpad('test', 10, 'html');
+      var rtltext = textpad.rightpad('تجربة', 10, 'html');
+      var padup   = textpad.uppad('test', 10, 'html', '#test3');
+      var paddown = textpad.downpad('test', 10, 'html', '#test4');
+      document.getElementById('test1').innerHTML = ltrtext;
+      document.getElementById('test2').innerHTML = rtltext;
+      document.getElementById('test3').innerHTML = padup;
+      document.getElementById('test4').innerHTML = paddown;
+    </script>
+  </body>
+</html>
