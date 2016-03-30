@@ -2,7 +2,7 @@
 Text-Pad is a tiny solution for string padding with javascript, it was inspired by the left-pad project.
 
 # Examples
-To see Text-Pad in action go to [Here](khaledelansari.com/textpad)
+To see Text-Pad in action go to [Here](http://khaledelansari.com/textpad/)
 
 # Installation
 Like any other javascript file just include it within the script tag
