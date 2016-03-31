@@ -30,5 +30,8 @@ var padup    = textpad.uppad('test', 10, 'html', '#test3');
 var paddown  = textpad.downpad('test', 10, 'html', '#test4');
 ```
 
+# Contributors
+A Thank you goes to the homie [@YazanRawashdeh](https://github.com/yazanrawashdeh) for his help in optimizing the code.
+
 # License
 This project is under the MIT license
