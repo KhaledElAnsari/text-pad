@@ -16,21 +16,11 @@ window.textpad = {
   },
 
   downpad: function(str, value, renderFor, selector){
-    
+
     return this._pad('down',str, value, renderFor,selector);
   },
 
-  _checkRenderFor : function(r){
-    return typeof r !== 'undefined' && r.constructor === String ? r : 'html';
-  },
-
-  _checkValue : function(v){
-    return typeof v !== 'undefined' && v.constructor === Number ? v : 0;
-  },
-
   _pad: function(dir,str, value, renderFor,selector){
-    var selector = typeof selector !== 'undefined' && selector.constructor === String  ? selector : 'empty';
-
     var text = '';
     if(typeof str !== 'undefined' && str.constructor === String) {
       text = str;
@@ -38,12 +28,12 @@ window.textpad = {
     else {
       throw new Error('String parameter is empty, textpad can\'t work without a string');
     }
-    var renderFor = this._checkRenderFor(renderFor);
-    var value     = this._checkValue(value);
+    var selector  = typeof selector  !== 'undefined' && selector.constructor  === String  ? selector  : 'empty';
+    var renderFor = typeof renderFor !== 'undefined' && renderFor.constructor === String  ? renderFor : 'html';
+    var value     = typeof value     !== 'undefined' && value.constructor     === Number  ? value     : 0;
     if(value === 0){
       console.warn('There will no space added because you didn\'t enter a value for the number of spaces');
     }
-
 
     if(dir == 'left' || dir == 'right'){
       dir = dir == 'left';
@@ -64,7 +54,7 @@ window.textpad = {
       dir = dir == 'down';
       var space = '\n';
       for (var i = 0; i < value; i++) {
-        dir ? text = (text + space) : (space + text);
+        dir ? text = (text + space) : text = (space + text);
       }
 
       if(renderFor == 'html' && selector != 'empty'){
